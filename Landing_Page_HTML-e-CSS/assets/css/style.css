@@ -1,10 +1,10 @@
-@import url("../css/global.css");
+@import url('./reset.css');
+@import url('./global.css');
+
 
 body {
     background-color: #000;
-    color: #FFF;
- 
-}
+    }
 
 h2 {
     font-size: 2rem;
@@ -15,21 +15,14 @@ h2 {
     margin-bottom: 24px;
 }
 
+p {
+    color: #FFF;
+  }
+  
+
 section {
     margin: 100px auto;
 }
-
-.banner h1 {
-    background-image: linear-gradient(to bottom, #33A8DB, #1472B7);
-    font-size: 2.5rem;
-    font-weight: 900;
-    line-height: 46.96px;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-}
-
 
 .banner {
     background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(49, 168, 221, .2), rgba(0, 0, 0, .6)),url("./assets/images/banner.png");
@@ -40,12 +33,24 @@ section {
     border-bottom: 1px solid #33A8DB80;
 }
 
+
 .banner .banner-content {
-    color: #FFFFFF;
+    color: #FFF;
     width: 600px;
     margin: auto;
     text-align: center;
-   
+    font-family: 'Raleway', sans-serif;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(#33A8DB, #1472B7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 
 .banner p {
