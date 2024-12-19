@@ -109,3 +109,30 @@ section {
 #course-content .modules-list .module span {
     color: #33A8DB;
 }
+
+#transform-world {
+    background-image: url("../images/woman-code.png");
+    height: 560px;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 200px;
+    border-top: 1px solid #33A8DB80;
+    border-bottom: 1px solid #33A8DB80;
+}
+
+#transform-world p {
+    font-weight: 900;
+    font-size: 2.5rem;
+    text-transform: lowercase;
+    max-width: 250px;
+    text-shadow: 3px 2px #33A8DB;
+  }
+
+ #professional-challenges {
+    text-align: center;
+    width: 800px;
+ }
+
+#professional-challenges img {
+    margin: 32px 0;
+}
