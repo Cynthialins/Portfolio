@@ -7,12 +7,29 @@ const state = {
     },
 
     values: {
-        timeId: null,
         gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
-    }    
+        currentTime: 60,
+    },    
+
+    actions: {
+        timeId: setInterval(randomSquare, 1000), // Determina a velocidade com que o inimigo mudará de quadrado//
+        countDownTimerId: setInterval(countDown, 1000),
+    }
 };
+
+// Determina o tempo do jogo//
+function countDown() {
+    state.values.currentTime--;
+    state.view.timeLeft.textContent = state.values.currentTime;
+
+    if (state.values.currentTime <= 0){
+        clearInterval(state.actions.countDownTimerId);
+        clearInterval(state.actions.timeId);
+        alert("Game Over! O seu resultado foi: " + state.values.result);
+    }
+}
 
 // Determina que o inimigo irá aparecer em cada quadrado de maneira randomica//
 function randomSquare() {
@@ -26,11 +43,6 @@ function randomSquare() {
     state.values.hitPosition = randomSquare.id;
 }
 
-// Determina a velocidade com que o inimigo mudará de quadrado//
-function moveEnemy() {
-    state.values.timeId = setInterval(randomSquare, state.values.gameVelocity);
-}
-
 //Determina o que deverá ser feito ao clicar em cima do quadrado contendo o inimigo//
 function addListenerHitbox() {
     state.view.squares.forEach((square) => {
@@ -39,14 +51,13 @@ function addListenerHitbox() {
                 state.values.result++;
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
-            };
+            }
         });
     });
 }
 
 // Determina como o jogo deve se comportar ao ser inicializado//
 function initialize() {
-    moveEnemy();
     addListenerHitbox();
 }
 
