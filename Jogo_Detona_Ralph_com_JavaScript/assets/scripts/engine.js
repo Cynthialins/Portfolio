@@ -14,10 +14,19 @@ const state = {
     },    
 
     actions: {
-        timeId: setInterval(randomSquare, 1000), // Determina a velocidade com que o inimigo mudará de quadrado//
-        countDownTimerId: setInterval(countDown, 1000),
+        timeId: null,
+        countDownTimerId: null,
     }
 };
+
+// Atualiza a velocidade com base no número de pontos
+function adjustDifficulty() {
+    if(state.values.result % 5 === 0 && state.values.gameVelocity > 300) {
+        state.values.gameVelocity -= 100;
+        clearInterval(state.actions.timeId);
+        state.actions.timeId = setInterval(randomSquare,state.values.gameVelocity);
+    }
+}
 
 // Determina o tempo do jogo//
 function countDown() {
@@ -27,12 +36,13 @@ function countDown() {
     if (state.values.currentTime <= 0){
         clearInterval(state.actions.countDownTimerId);
         clearInterval(state.actions.timeId);
+        playSound("game_over.wav");
         alert("Game Over! O seu resultado foi: " + state.values.result);
     }
 }
 
-function playSound() {
-    let audio = new Audio("./assets/audios/hit.m4a");
+function playSound(audioName) {
+    let audio = new Audio(`./assets/audios/${audioName}`);
     audio.volume = 0.2;
     audio.play();
 }
@@ -57,7 +67,8 @@ function addListenerHitbox() {
                 state.values.result++;
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
-                playSound();
+                playSound("hit.m4a");
+                adjustDifficulty();
             }
         });
     });
@@ -66,6 +77,8 @@ function addListenerHitbox() {
 // Determina como o jogo deve se comportar ao ser inicializado//
 function initialize() {
     addListenerHitbox();
+    state.actions.timeId = setInterval(randomSquare, state.values.gameVelocity); // Inicia o jogo com a velocidade inicial
+    state.actions.countDownTimerId = setInterval(countDown, 1000);
 }
 
 initialize();
