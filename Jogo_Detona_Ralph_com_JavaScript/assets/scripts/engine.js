@@ -31,6 +31,12 @@ function countDown() {
     }
 }
 
+function playSound() {
+    let audio = new Audio("./assets/audios/hit.m4a");
+    audio.volume = 0.2;
+    audio.play();
+}
+
 // Determina que o inimigo irá aparecer em cada quadrado de maneira randomica//
 function randomSquare() {
     state.view.squares.forEach((square) =>{
@@ -51,6 +57,7 @@ function addListenerHitbox() {
                 state.values.result++;
                 state.view.score.textContent = state.values.result;
                 state.values.hitPosition = null;
+                playSound();
             }
         });
     });
