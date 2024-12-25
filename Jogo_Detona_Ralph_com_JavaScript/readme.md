@@ -27,6 +27,8 @@ Bem-vindo ao **JSGame Detona Ralph**! Neste repositório, você encontrará um j
 
 Este jogo foi desenvolvido como parte de um projeto educacional da Digital Innovation One. Repositório original [aqui](https://github.com/digitalinnovationone/jsgame-detona-ralph)
 
-### Implementação Adicional
 
-Função para alterar a velocidade do tempo em que o Ralph aparece nos quadrados a medida que o jogo avança, para torná-lo mais desafiador.
+### Implementações Adicionais
+
+- Áudio de Game-Over.
+- Função para alterar a velocidade do tempo em que o Ralph aparece nos quadrados a medida que o jogo avança, para torná-lo mais desafiador.
