@@ -5,6 +5,7 @@ body {
     min-height: 100vh;
     background-color: #fc1e8a;
     user-select: none;
+    
 }
 
 .container {
@@ -21,7 +22,9 @@ body {
       #ec38bc 70%,
       #fdeff9 100%
       ); 
-      padding: 40px 60px;
+    padding: 40px 60px;
+    border-radius: 20px;
+
 }
 
 h2 {
@@ -29,6 +32,7 @@ h2 {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    text-shadow: 7px 7px 5px #000;
 }
 
 .reset {
@@ -42,6 +46,7 @@ h2 {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    border-radius: 10px;
 }
 
 .reset:focus {
@@ -71,7 +76,8 @@ h2 {
     font-size: 4rem;
     transform: rotateY(180deg);
     transition: 0.25s;
-}
+    border-radius: 10px;
+    }
 
 .item::after {
     content: '';
@@ -81,6 +87,7 @@ h2 {
     transition: 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
+    border-radius: 10px;
 }
 
 .item.boxOpen {
