@@ -53,7 +53,7 @@
 
 .s-wrapper .s-main-content__top .s-description {
   background-color: rgba(0,0,0,.7);
-  max-width: 50%;
+  max-width: 63%;
   padding: 20px;
   border-radius: 10px;
 }
@@ -75,4 +75,9 @@
 .s-wrapper .s-main-content .s-links ul {
   display: flex;
   flex-direction: row;
+}
+
+.s-spiderman-01-01 {
+  background-image: url('../images/spiderman-tobey/movie-01/background.png');
+  background-size: cover;
 }

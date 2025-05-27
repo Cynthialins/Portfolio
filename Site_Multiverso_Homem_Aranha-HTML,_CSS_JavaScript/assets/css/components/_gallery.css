@@ -1,11 +1,13 @@
 .gallery {
   padding: 20px;
   padding-left: 0;
+  margin: auto;
 }
 
 .gallery ul {
   display: flex;
   flex-direction: row;
+  margin-left: -300px;
 }
 
 .gallery ul li {
